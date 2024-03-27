@@ -1,0 +1,12 @@
+.container{
+    background-color: #D393DB;
+    align-items: center;
+    font-family:sans-serif;
+    border-radius: 5px;
+    width: 15%;
+    margin: 10px;
+    margin-bottom: 50px;
+    padding: 3px;
+    text-align: center;
+
+}
