@@ -16,7 +16,7 @@
   }
   
   .icon-cart path {
-    fill: #CFBEDB;
+    fill: #31493C;
     transition: .2s linear;
   }
   
@@ -25,7 +25,7 @@
   }
   
   .btn-cart:hover > .icon-cart path {
-    fill: rgb(186, 34, 233);
+    fill: #001A23;
   }
   
   .btn-cart:hover::after {
@@ -34,7 +34,7 @@
   }
   
   .quantity{
-    color: #CFBEDB;
+    color: #001A23;
     text-decoration-line: none;
     font-weight: bold;
     font-size: 14px;    

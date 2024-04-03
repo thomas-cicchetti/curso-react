@@ -1,12 +1,19 @@
 .container{
-    background-color: #D393DB;
+    background-color: #001A23;
     align-items: center;
-    font-family:sans-serif;
+    font-family:'Franklin Gothic Medium';
     border-radius: 5px;
-    width: 15%;
-    margin: 10px;
+    margin: 10px;   
     margin-bottom: 50px;
     padding: 3px;
     text-align: center;
+    display: flex;
+    width: 40%;
+}
 
+.description{
+    margin: 10px;
+    color: black;
+    font-size: 20px;
+    font-weight: 550;
 }
