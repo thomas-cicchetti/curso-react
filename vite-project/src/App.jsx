@@ -1,11 +1,17 @@
+import React from 'react'
+import NavBar from './componentes/NavBar.jsx'
+import CardContainer from './componentes/CardContainer.jsx'
 
 function App() {
+  
+
   return (
     <>
-      <p>
-        Hola Mundo
-      </p>
+    <NavBar/>
+    <CardContainer/>
+    
     </>
+    
   )
 }
 
