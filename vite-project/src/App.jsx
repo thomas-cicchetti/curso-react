@@ -1,16 +1,20 @@
 import React from 'react'
 import NavBar from './componentes/NavBar.jsx'
-import CardContainer from './componentes/CardContainer.jsx'
+import { BrowserRouter } from 'react-router-dom'
+import Page from './componentes/Page.jsx'
+import Footer from './componentes/Footer.jsx'
+
 
 function App() {
   
 
   return (
-    <>
-    <NavBar/>
-    <CardContainer/>
-    
-    </>
+    <BrowserRouter>
+      <NavBar/>
+      <Page/>
+      <Footer/>
+      
+    </BrowserRouter>
     
   )
 }

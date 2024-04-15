@@ -12,7 +12,7 @@ function ItemListContainer(props) {
   const cart = cartCounter[0]
   const setCart = cartCounter[1]
 
-  
+
 
 
   return (
@@ -22,7 +22,7 @@ function ItemListContainer(props) {
         <div className="card__img"><img src={props.image} alt="image" width={250} height={250} /></div>
         <div className="card__title">{props.nombre}</div>
         <div className="card__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</div>
-        <div className="card__price">{props.precio}</div>
+        <div className="card__price">${props.precio} USD</div>
         <div className="card__wrapper">
           <div>
             <button className="CartBtn" onClick={() => acum === 0 ? alert("Por favor, selecciona la cantidad que deseas añadir") : setCart(cart + acum) && console.log(cart)}>
@@ -46,7 +46,13 @@ function ItemListContainer(props) {
                 +
               </span>
             </button>
+
           </div>
+        </div>
+        <div className="vmCont">
+          <button className='vm'>
+            <p className='textvm'>Ver más</p>
+          </button>
         </div>
       </div>
     </div>
