@@ -24,9 +24,9 @@ body {
 .title{
     margin-left: 10px;
     color: #31493C;
-    font-family: TheNature;
-    font-size: 50px;
-    letter-spacing: 5px;
+    font-family: sans-serif;
+    font-size: 25px;
+    text-decoration: none;
     
 
 }
@@ -50,7 +50,7 @@ body {
 }
 
 
-a {
+.na {
     font-size: 18px;
     color: #2D2A32;
     font-family: inherit;
@@ -65,18 +65,18 @@ a {
     transition-property: color;
   }
   
-  a:focus,
-  a:hover {
-    color: red;
+  .na:focus,
+  .na:hover {
+    color: #001A23;
   }
   
-  a:focus:after,
-  a:hover:after {
+  .na:focus:after,
+  .na:hover:after {
     width: 100%;
     left: 0%;
   }
   
-  a:after {
+  .na:after {
     content: "";
     pointer-events: none;
     bottom: -2px;

@@ -1,8 +1,12 @@
 import React from 'react'
 import { useState } from 'react'
-
 import "../estilos/itemListContainerStyle.css"
+import { Link } from 'react-router-dom'
+
 function ItemListContainer(props) {
+
+  const {id , name, price, image} = props
+
 
   const counter = useState(0)
   const acum = counter[0]
@@ -17,11 +21,10 @@ function ItemListContainer(props) {
 
   return (
 
-    <div>
+    <div className='itemBox'>
       <div className="card">
-        <div className="card__img"><img src={props.image} alt="image" width={250} height={250} /></div>
+        <div className="card__img"><img src={props.image} alt="image" width={250} height={250} className='image' /></div>
         <div className="card__title">{props.nombre}</div>
-        <div className="card__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</div>
         <div className="card__price">${props.precio} USD</div>
         <div className="card__wrapper">
           <div>
@@ -50,9 +53,7 @@ function ItemListContainer(props) {
           </div>
         </div>
         <div className="vmCont">
-          <button className='vm'>
-            <p className='textvm'>Ver más</p>
-          </button>
+          <Link to={`/${id}`}><button className='vm'><p className='textvm'>Ver más</p></button></Link>
         </div>
       </div>
     </div>

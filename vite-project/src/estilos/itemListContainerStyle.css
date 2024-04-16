@@ -133,7 +133,7 @@
 }
 
 .card__img {
-  background: linear-gradient(90deg, #fff8f79a, #f0f7dfa2);
+  background: transparent;
   border-radius: 20%;
   align-items: center;
   text-align: center;
@@ -339,15 +339,27 @@
   font-weight: lighter;
   font-family: coolvetica;
   font-size: 16px;
+  text-decoration: none;
 }
 
 .vm:active {
   transform: scale(0.95);
   transition-duration: .5s;
+  text-decoration: none;
 }
 
 .vmCont{
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
+}
+
+.itemBox{
+  margin: 15px;
+}
+
+.image{
+  border-radius: 50px;
+
 }

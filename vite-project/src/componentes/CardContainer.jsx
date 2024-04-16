@@ -8,7 +8,7 @@ function CardContainer() {
   const [product, setProduct] = useState([])
 
   useEffect(() => {
-    fetch('https://api.escuelajs.co/api/v1/categories/7/products')
+    fetch('https://api.escuelajs.co/api/v1/categories/2/products')
     .then((data)=>{
       return data.json()
     })
@@ -30,7 +30,7 @@ function CardContainer() {
     
     <section className='structureContainer' >
       {product.map((item) => {
-        return <ItemListContainer key={item.id} nombre={item.title} precio={item.price} image={item.images[0]}/>
+        return <ItemListContainer id={item.id} nombre={item.title} precio={item.price} image={item.images[0]}/>
       })}
     </section>
 

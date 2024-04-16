@@ -1,5 +1,6 @@
 .structureContainer{
-    display: flex;
+    display: ruby;
     justify-content: space-around;
     margin-top: 50px;
+    
 }
