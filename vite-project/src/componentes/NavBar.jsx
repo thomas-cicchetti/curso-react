@@ -8,13 +8,13 @@ function NavBar() {
   return (
     
     <header className='nav'>
-        <Link to='/home' className='img'><img src="https://i.postimg.cc/6p4Vd6Rf/logo.png" alt="logo" width={80} height={80}/></Link>
-        <Link to='/home' className='title'><h1>Tech & Bytes</h1></Link>
+        <Link to='/home' className='img'><img src="https://i.postimg.cc/HxzHqM7Y/Sin-t-tulo-1.png" alt="logo" width={80} height={80}/></Link>
+        <Link to='/home' className='title'><h1>ByteHub</h1></Link>
         <nav className='navigator'>
-          <Link to='/home' className='na'>Home</Link>
-          <Link to='/products' className='na'>Productos</Link>
-          <Link to='/contact' className='na'>Contacto</Link>
-          <Link to='/cart' className='na'><CartWidget/></Link>
+          <Link to='/home' ><button className='na'>Home</button></Link>
+          <Link to='/products'><button className='na'>Productos</button></Link>
+          <Link to='/contact' ><button className='na'>Contacto</button></Link>
+          <Link to='/cart'><button className='na'><CartWidget/></button></Link>
         </nav>
     </header>
   )

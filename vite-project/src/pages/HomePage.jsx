@@ -1,8 +1,11 @@
 import React from 'react'
+import '../estilos/homePage.css'
 
 function Home() {
   return (
-    <h1>Home</h1>
+    <div className=''>
+      <h1>Home</h1>
+    </div>
   )
 }
 

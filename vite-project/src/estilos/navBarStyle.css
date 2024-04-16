@@ -8,23 +8,24 @@ body {
 }
 
 .nav {
-    background-color: #94A794;
+    background-color: #13112d;
     display: flex;
     align-items: center;
-    font-family: sans-serif;
     width: 100%;
     height: 100px;
     position: relative;
+
 }
 
 .img{
   margin-left: 10%;
+  margin-right: 5px;
 }
 
 .title{
     margin-left: 10px;
-    color: #31493C;
-    font-family: sans-serif;
+    color: #A69CAC;
+    font-family: Cascadia Code;
     font-size: 25px;
     text-decoration: none;
     
@@ -38,7 +39,7 @@ body {
 
 .navigator a{
     padding: 10px;
-    color: #31493C;
+    color: #A69CAC;
     font-size: 18px;
     text-decoration-line: none;
     font-weight: bold;
@@ -46,13 +47,13 @@ body {
 }
 
 .navigator a:hover{
-    color: #001A23;
+    color: #F1DAC4;
 }
 
 
-.na {
+/* .na {
     font-size: 18px;
-    color: #2D2A32;
+    color: #F1DAC4;
     font-family: inherit;
     font-weight: 800;
     cursor: pointer;
@@ -67,7 +68,7 @@ body {
   
   .na:focus,
   .na:hover {
-    color: #001A23;
+    color: #F1DAC4;
   }
   
   .na:focus:after,
@@ -84,8 +85,104 @@ body {
     position: absolute;
     width: 0%;
     height: 2px;
-    background-color: #001A23;
+    background-color: #F1DAC4;
     transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
     transition-duration: 400ms;
     transition-property: width, left;
+  } */
+
+  .na,.na::after {
+    padding: 5px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    color: #A69CAC;
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+    font-family: Cascadia Code;
+  }
+  
+  .na::after {
+    --move1: inset(50% 50% 50% 50%);
+    --move2: inset(31% 0 40% 0);
+    --move3: inset(39% 0 15% 0);
+    --move4: inset(45% 0 40% 0);
+    --move5: inset(45% 0 6% 0);
+    --move6: inset(14% 0 61% 0);
+    clip-path: var(--move1);
+    content: 'GLITCH';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+  }
+  
+  .na:hover {
+    text-shadow: -1px -1px 0px #1df2f0, 1px 1px 0px #E94BE8;
+  }
+  
+  .na:hover {
+    background-color: transparent;
+    border: 1px solid rgb(0, 255, 213);
+    box-shadow: 0px 10px 10px -10px rgb(0, 255, 213);
+  }
+  
+  @keyframes glitch_4011 {
+    0% {
+      clip-path: var(--move1);
+      transform: translate(0px,-10px);
+    }
+  
+    10% {
+      clip-path: var(--move2);
+      transform: translate(-10px,10px);
+    }
+  
+    20% {
+      clip-path: var(--move3);
+      transform: translate(10px,0px);
+    }
+  
+    30% {
+      clip-path: var(--move4);
+      transform: translate(-10px,10px);
+    }
+  
+    40% {
+      clip-path: var(--move5);
+      transform: translate(10px,-10px);
+    }
+  
+    50% {
+      clip-path: var(--move6);
+      transform: translate(-10px,10px);
+    }
+  
+    60% {
+      clip-path: var(--move1);
+      transform: translate(10px,-10px);
+    }
+  
+    70% {
+      clip-path: var(--move3);
+      transform: translate(-10px,10px);
+    }
+  
+    80% {
+      clip-path: var(--move2);
+      transform: translate(10px,-10px);
+    }
+  
+    90% {
+      clip-path: var(--move4);
+      transform: translate(-10px,10px);
+    }
+  
+    100% {
+      clip-path: var(--move1);
+      transform: translate(0);
+    }
   }

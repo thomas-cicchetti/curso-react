@@ -23,9 +23,10 @@ function ItemListContainer(props) {
 
     <div className='itemBox'>
       <div className="card">
-        <div className="card__img"><img src={props.image} alt="image" width={250} height={250} className='image' /></div>
+        
+        <Link to={`/products/${id}`}><div className="card__img"><img src={props.image} alt="image" width={250} height={250} className='image' /></div></Link>
         <div className="card__title">{props.nombre}</div>
-        <div className="card__price">${props.precio} USD</div>
+        <div className="card__price">${props.precio}</div>
         <div className="card__wrapper">
           <div>
             <button className="CartBtn" onClick={() => acum === 0 ? alert("Por favor, selecciona la cantidad que deseas añadir") : setCart(cart + acum) && console.log(cart)}>
@@ -51,9 +52,6 @@ function ItemListContainer(props) {
             </button>
 
           </div>
-        </div>
-        <div className="vmCont">
-          <Link to={`/${id}`}><button className='vm'><p className='textvm'>Ver más</p></button></Link>
         </div>
       </div>
     </div>

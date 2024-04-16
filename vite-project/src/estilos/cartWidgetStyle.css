@@ -5,8 +5,10 @@
     height: 50px;
     border-radius: 10px;
     border: none;
+    cursor: pointer;
     background-color: transparent;
-    position: relative;
+    padding: 10px;
+
   }
   
   .icon-cart {
@@ -34,7 +36,7 @@
   }
   
   .quantity{
-    color: #001A23;
+    color: #A69CAC;
     text-decoration-line: none;
     font-weight: bold;
     font-size: 14px;    

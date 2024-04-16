@@ -2,7 +2,7 @@ import React from 'react'
 
 function Contacto() {
   return (
-    <div>Contacto</div>
+    <h2>Contacto</h2>
   )
 }
 

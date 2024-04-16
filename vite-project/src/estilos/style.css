@@ -1,4 +1,8 @@
 body{
-    background-image: url(../imagenes/forest.jpg);
+    background-image: linear-gradient(to bottom, #474973 0%, #3B2667  100%);
     background-repeat: no-repeat;
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 30px;
+
 }
