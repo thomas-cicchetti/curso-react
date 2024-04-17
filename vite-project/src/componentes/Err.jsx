@@ -6,7 +6,7 @@ function Err() {
         <div>
             <div class="terminal-loader">
                 <div class="terminal-header">
-                    <div class="terminal-title">Status</div>
+                    <div class="terminal-title">Status 404</div>
                     <div class="terminal-controls">
                         <div class="control close"></div>
                         <div class="control minimize"></div>
