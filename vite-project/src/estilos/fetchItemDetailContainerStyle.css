@@ -18,14 +18,14 @@
     align-items: center;
 }
 
-.prodDetailCont{
+.prodDetailCont {
     display: flex;
     margin-top: 50px;
     justify-content: space-evenly;
     align-items: center;
 }
 
-.productTitle{
+.productTitle {
     color: #A69CAC;
     font-family: Cascadia Code;
     font-size: 30px;
@@ -36,14 +36,14 @@
     padding-right: 30px;
 }
 
-.imgDetail{
+.imgDetail {
     border-radius: 50px;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 
-.productPrice{
+.productPrice {
     color: #A69CAC;
     font-family: Cascadia Code;
     font-size: 50px;
@@ -55,14 +55,14 @@
     margin-top: 70px;
 }
 
-.detail{
+.detail {
     width: 400px;
     height: 100%;
     margin-top: 125px;
 
 }
 
-.productDescription{
+.productDescription {
     color: #A69CAC;
     font-family: Cascadia Code;
     font-size: 15px;
@@ -72,3 +72,21 @@
     padding-right: 15px;
     margin-top: 70px;
 }
+
+
+
+
+
+.card__btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: none;
+    background: transparent;
+}
+
+.card__btn-plus {
+    background: var(--bg-color);
+}
+
+

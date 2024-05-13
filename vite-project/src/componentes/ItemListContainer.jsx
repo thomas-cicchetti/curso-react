@@ -1,58 +1,29 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useContext } from 'react'
 import "../estilos/itemListContainerStyle.css"
 import { Link } from 'react-router-dom'
+import Counter from './Counter'
+import { context } from './Context'
 
 function ItemListContainer(props) {
 
-  const { id, name, price, image } = props
+  const { product } = props
 
+  const ContextValue = useContext(context)
 
-  const counter = useState(0)
-  const acum = counter[0]
-  const setAcum = counter[1]
-
-  const cartCounter = useState(0)
-  const cartTotalProducts = cartCounter[0]
-  const setCartTotalProducts = cartCounter[1]
-  console.log(cartTotalProducts)
-
-
+  const handleConfirm = (acum) => {
+      ContextValue.addToCart(acum, props.product, props.product.id)
+      }
 
   return (
 
     <div className='itemBox'>
       <div className="card">
 
-        <Link to={`/products/${id}`}><div className="card__img"><img src={props.image} alt="image" width={250} height={250} className='image' /></div></Link>
-        <div className="card__title">{props.nombre}</div>
-        <div className="card__price">${props.precio}</div>
-        <div className="card__wrapper">
-          <div>
-            <button className="CartBtn" onClick={() => acum === 0 ? alert('La cantidad a añadir debe ser mayor a 0.') : setCartTotalProducts(cartTotalProducts + acum)}>
-
-              <span className="IconContainer">
-                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512" fill="rgb(17, 17, 17)" className="cart"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path></svg>
-              </span>
-              <p className="text">Agregar al carrito</p>
-            </button>
-
-          </div>
-          <div className="card__counter">
-            <button className="pushable" onClick={() => acum > 0 ? setAcum(acum - 1) : setAcum(0)}>
-              <span className="front">
-                -
-              </span>
-            </button>
-            <div className="card__counter-score">{acum}</div>
-            <button className="pushable" onClick={() => setAcum(acum + 1)}>
-              <span className="front">
-                +
-              </span>
-            </button>
-
-          </div>
-        </div>
+        <Link to={`/products/${props.product.id}`}><div className="card__img"><img src={props.product.image} alt="image" width={250} height={250} className='image' /></div></Link>
+        <div className="card__title">{props.product.title}</div>
+        <div className="card__price">${props.product.price}</div>
+        <div className="card__wrapper"></div>
+        <Counter handleConfirm={handleConfirm}/>
       </div>
     </div>
   )
