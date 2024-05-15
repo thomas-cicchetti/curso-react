@@ -18,6 +18,7 @@ function Page() {
                 <Route path='/cart' element={<Carrito/>} />
                 <Route path='/products/:id' element={<ProductDetail/>} />
                 <Route path='*' element={<Err/>} />
+                <Route path='/category/:category' element={<Productos/>} />
             </Routes>
         </>
     )

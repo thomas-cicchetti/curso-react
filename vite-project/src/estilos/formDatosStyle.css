@@ -1,5 +1,5 @@
-/* .form-container {
-    width: 700px;
+.form-container {
+    width: 600px;
     background: linear-gradient(#212121, #212121) padding-box,
         linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
     border: 2px solid transparent;
@@ -151,7 +151,8 @@
 .pyramid-loader .wrapper .side {
     width: 70px;
     height: 70px;
-    background: radial-gradient( #2F2585 10%, #F028FD 70%, #2BDEAC 120%);
+    /* you can choose any gradient or color you want */
+    /* background: radial-gradient( #2F2585 10%, #F028FD 70%, #2BDEAC 120%); */
     position: absolute;
     top: 0;
     left: 0;
@@ -205,4 +206,4 @@
 
 .titleContact{
     padding-top: 50px;
-} */
+}

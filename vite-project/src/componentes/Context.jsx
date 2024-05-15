@@ -1,4 +1,5 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
+import { toast } from "react-toastify";
 
 export const context = createContext();
 const Provider = context.Provider;
@@ -36,57 +37,75 @@ function CartProvider(props) {
             copy.push(item)
             setCart(copy)
         }
-        alert("Articulo agregado con éxito")
+        toast.success("Articulo agregado al carrito")
     }
 
 
 
-const removeItem = (id) => { 
-    console.log("entro")
-    console.log(cart)
-    console.log(cart[0].id)
-    console.log(id)
-    let index = -1;
-    for (let i = 0; i < cart.length; i++) {
-        if (cart[i].id === id) {
-            index = i;
-            break;
+    const removeItem = (id) => {
+        console.log("entro")
+        console.log(cart)
+        console.log(cart[0].id)
+        console.log(id)
+        let index = -1;
+        for (let i = 0; i < cart.length; i++) {
+            if (cart[i].id === id) {
+                index = i;
+                break;
+            }
         }
+        console.log(index)
+        if (index !== -1) {
+            setCartQ(prevCartQ => prevCartQ - cart[index].cant);
+            setTotalPrice(prevTotalPrice => prevTotalPrice - (cart[index].price * cart[index].cant));
+            const updatedCart = [...cart.slice(0, index), ...cart.slice(index + 1)];
+            setCart(updatedCart);
+        }
+
+        toast.warning('Articulo eliiminado del carrito')
+
     }
-    console.log(index)
-    if (index !== -1) {
-        setCartQ(prevCartQ => prevCartQ - cart[index].cant);
-        setTotalPrice(prevTotalPrice => prevTotalPrice - (cart[index].price * cart[index].cant));
-        const updatedCart = [...cart.slice(0, index), ...cart.slice(index + 1)];
-        setCart(updatedCart);
+
+    const clearCart = () => {
+        if (cartQ == 0) {
+            toast.warning("No tiene articulos en el carrito")
+        } else {
+            setCartQ(0)
+            setCart([])
+            setTotalPrice(0)
+            toast.error("Carrito vaciado con éxito")
+
+        }
+
     }
-    alert("Articulo eliminado con éxito")
 
-}
+    const buyConfirm = () => {
+        setCartQ(0)
+        setCart([])
+        setTotalPrice(0)
+        toast.success("Pago realizado con éxito")
 
-const clearCart = () => {
-    setCartQ(0)
-    setCart([])
-    setTotalPrice(0)
-    alert("Carrito vaciado con éxito")
-}
+    
 
-const valorActual = {
-    cartQ: cartQ,
-    totalPrice: totalPrice,
-    cart: cart,
-    addToCart: addToCart,
-    removeItem: removeItem,
-    clearCart: clearCart
-}
+    }
+
+    const valorActual = {
+        cartQ: cartQ,
+        totalPrice: totalPrice,
+        cart: cart,
+        addToCart: addToCart,
+        removeItem: removeItem,
+        clearCart: clearCart,
+        buyConfirm: buyConfirm
+    }
 
 
 
-return (
-    <Provider value={valorActual}>
-        {props.children}
-    </Provider>
-)
+    return (
+        <Provider value={valorActual}>
+            {props.children}
+        </Provider>
+    )
 }
 
 export default CartProvider

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import '../estilos/fetchItemDetailContainerStyle.css'
 import ItemDetailContainer from './ItemDetailContainer'
+import { getProductDetail } from '../functions'
 
 
 
@@ -14,16 +15,15 @@ function ProductDetail() {
 
 
     useEffect(() => {
-        fetch(`https://fakestoreapi.com/products/${id}`)
-            .then((data) => {
-                return data.json()
-            })
+
+        getProductDetail(id)
             .then((data) => {
                 setProduct(data)
             })
             .catch((error) => {
                 console.log(error)
             })
+
     }, [])
 
     return (

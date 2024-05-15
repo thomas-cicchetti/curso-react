@@ -1,0 +1,19 @@
+.containerCategories{
+    position: fixed;
+    padding: 10px;
+}
+    
+.containerCategories h5{
+    color: #A69CAC;
+    font-family: Cascadia Code;
+    font-size: 20px;
+}
+
+.containerCategories ul li{
+    color: #A69CAC;
+    font-family: Cascadia Code;
+    font-size: 15px;
+    padding-top: 10px;
+    text-decoration-line: none;
+
+}

@@ -1,34 +1,43 @@
 import React, { useEffect, useState } from 'react'
 import ItemListContainer from './ItemListContainer.jsx'
 import '../estilos/cardContainerStyle.css'
+import { getProducts, getProductsByCategory } from '../functions.js'
 
 
-function CardContainer() {
 
-  const [product, setProduct] = useState([])
+
+function CardContainer(props) {
+
+  const [product, setProduct] = useState([]);
+
+  const id = props.id
 
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products/category/electronics')
-    .then((data)=>{
-      return data.json()
-    })
-    .then((data)=>{
-      console.log(data)
-      setProduct(data)
-    })
-    .catch((error)=>{
-      console.log(error)
-    })
-  }, [])
-  
-  
+    if (id) {
+      getProductsByCategory(id)
+        .then((data) => {
+          setProduct(data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } else {
+      getProducts()
+        .then((data) => {
+          setProduct(data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  }, [id]);
 
 
   return (
-    
+
     <section className='structureContainer' >
       {product.map((item) => {
-        return <ItemListContainer key = {item.id} product = {item}/>
+        return <ItemListContainer key={item.id} product={item} />
       })}
     </section>
 

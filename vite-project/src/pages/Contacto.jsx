@@ -1,5 +1,6 @@
 import React from 'react'
 import '../estilos/contactoStyle.css'
+import FormDatos from '../componentes/FormDatos'
 
 function Contacto() {
   return (
@@ -19,31 +20,8 @@ function Contacto() {
         </div>
       </div>
 
-      <div>
-        <div className="containerForm">
-          <div className="form-container">
-            <form className="form">
-              <div className="form-group">
-                <label htmlFor="fullname">Nombre y Apellido</label>
-                <input required={true} name="email" id="fullname" type="text" />
-              </div>
-              <div className="form-group">
-                <label htmlFor="email">Correo</label>
-                <input required={true} name="email" id="email" type="email" />
-              </div>
-              <div className="form-group">
-                <label htmlFor="phone">Teléfono</label>
-                <input required={true} name="email" id="phone" type="number" />
-              </div>
-              <div className="form-group">
-                <label htmlFor="textarea">Mensaje</label>
-                <textarea required={true} cols="50" rows="10" id="textarea" name="textarea"></textarea>
-              </div>
-              <button type="submit" className="form-submit-btn">Submit</button>
-            </form>
-          </div>
-        </div>
-      </div>
+      <FormDatos button="Enviar" />
+
     </div>
   )
 }

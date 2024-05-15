@@ -41,6 +41,7 @@
     border-radius: 50px;
     align-items: center;
     width: 100%;
+    box-sizing: border-box;
 
 }
 
@@ -89,9 +90,9 @@
     z-index: 1;
     transition-duration: .5s;
     font-size: 1.04em;
-    font-weight: lighter;
+    font-weight: bold;
     font-size: 16px;
-    font-family: coolvetica;
+    font-family: Cascadia Code;
 }
 
 .CartBtn:hover .IconContainer {

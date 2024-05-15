@@ -63,3 +63,16 @@
     transform: translateY(30px);
     transition-duration: .3s;
 }
+
+.linkAqui{
+    color: #A69CAC;
+}
+
+.cartContainer{
+    display: flex;
+    justify-content: space-around;
+}
+
+.detailsOrder{
+    margin-top: 70px;
+}
