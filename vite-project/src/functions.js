@@ -9,7 +9,7 @@ export const getProducts = () => {
 
     return query
         .then((res) => {
-            const products = res.docs.map((doc) => { 
+            const products = res.docs.map((doc) => {
                 const product = doc.data()
                 product.id = doc.id
                 return product
@@ -29,8 +29,8 @@ export const getProductDetail = (id) => {
     return query
         .then((res) => {
             const product = res.data()
-            return product 
-            
+            return product
+
         })
         .catch((error) => { console.log('error') })
 }
@@ -43,7 +43,7 @@ export const getProductsByCategory = (category) => {
 
     return cons
         .then((res) => {
-            const products = res.docs.map((doc) => { 
+            const products = res.docs.map((doc) => {
                 const product = doc.data()
                 product.id = doc.id
                 return product
@@ -58,15 +58,19 @@ export const createSale = (items, user, total) => {
     const db = getFirestore(app)
     const salesCollection = collection(db, 'ventas')
     const venta = {
-        items : items,
+        items: items,
         user: user,
         buyDate: serverTimestamp(),
         total: total
     }
     const query = addDoc(salesCollection, venta)
 
-    query
-        .then((res) => { console.log(res) })
-        .catch((error) => { console.log(error) })
-
+    return query
+        .then((res) => {
+            return res.id
+        })
+        .catch((error) => { 
+            console.log(error);
+            throw error;
+        });
 }

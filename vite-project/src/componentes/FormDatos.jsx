@@ -1,18 +1,18 @@
-import React, { useContext, useState } from 'react'
-import "../estilos/formDatosStyle.css"
+import React, { useContext, useState } from 'react';
+import "../estilos/formDatosStyle.css";
 import { context } from './Context';
 import { createSale } from '../functions';
 
 function FormDatos(props) {
-
-    const venta = useContext(context)
-
+    const venta = useContext(context);
     const [formData, setFormData] = useState({
         fullname: '',
         email: '',
         phone: '',
         textarea: ''
     });
+
+    
 
     const handleChange = (e) => {
         setFormData({
@@ -24,9 +24,13 @@ function FormDatos(props) {
     const handleSubmit = (e) => {
         e.preventDefault();
         createSale(venta.cart, formData, venta.totalPrice)
-        venta.buyConfirm()
+            .then((res) => {
+                venta.buyConfirm(res);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     };
-
 
     return (
         <div>
@@ -57,5 +61,4 @@ function FormDatos(props) {
     );
 }
 
-
-export default FormDatos
+export default FormDatos;

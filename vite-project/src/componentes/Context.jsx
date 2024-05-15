@@ -9,6 +9,7 @@ function CartProvider(props) {
     const [cartQ, setCartQ] = useState(0)
     const [totalPrice, setTotalPrice] = useState(0)
     const [cart, setCart] = useState([])
+    const [orderId, setOrderId] = useState();
 
 
     const addToCart = (quantity, item) => {
@@ -79,11 +80,16 @@ function CartProvider(props) {
 
     }
 
-    const buyConfirm = () => {
+    const buyConfirm = (orderId) => {
+        setOrderId(orderId);
         setCartQ(0)
         setCart([])
         setTotalPrice(0)
         toast.success("Pago realizado con éxito")
+        
+
+        
+        
 
     
 
@@ -96,7 +102,8 @@ function CartProvider(props) {
         addToCart: addToCart,
         removeItem: removeItem,
         clearCart: clearCart,
-        buyConfirm: buyConfirm
+        buyConfirm: buyConfirm,
+        orderId: orderId
     }
 
 

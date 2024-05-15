@@ -69,10 +69,22 @@
 }
 
 .cartContainer{
-    display: flex;
     justify-content: space-around;
+    display: flex;
 }
 
 .detailsOrder{
     margin-top: 70px;
+}
+
+.containerCartDetail{
+    min-height: 75vh;
+}
+
+.orderId{
+    margin-top: 100px;
+    font-family: Cascadia Code;
+    text-align: center;
+    color: #A69CAC;
+
 }

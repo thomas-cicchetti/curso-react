@@ -1,4 +1,9 @@
 .container{
     position: absolute;
     bottom: 0;
+
+}
+
+.titleHome{
+    min-height: 80vh;
 }

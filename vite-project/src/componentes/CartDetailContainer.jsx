@@ -1,13 +1,20 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { context } from './Context'
 import ItemInCartDetail from './ItemInCartDetail'
 import "../estilos/cartDetailContainerStyle.css"
 import { Link } from 'react-router-dom'
 import FormDatos from './FormDatos'
+import { createSale } from '../functions'
 
 function CartDetailContainer() {
 
     const product = useContext(context)
+    console.log(product)
+    console.log(product.orderId)
+
+
+
+
 
     const mensajePantalla = () => {
         if (product.cartQ == 0) {
@@ -49,9 +56,18 @@ function CartDetailContainer() {
         }
     }
 
+    const showId = () => {
+        if (product.orderId !== undefined) {
+            return <div className='orderId'>
+                <h2>Su compra fue aprobada con exito bajo el siguiente ID: <br />{product.orderId}</h2>
+            </div>
+        }
+    }
+
+
     return (
 
-        <div>
+        <div className='containerCartDetail'>
             <h4>
                 Carrito de compras
             </h4>
@@ -59,8 +75,11 @@ function CartDetailContainer() {
             <div className='cartContainer'>
                 {mensajePantalla()}
                 {form()}
-            </div>
+                
 
+
+            </div>
+            {showId()}
         </div>
 
 
