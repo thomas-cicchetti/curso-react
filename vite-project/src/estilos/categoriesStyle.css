@@ -1,11 +1,14 @@
 .containerCategories{
     padding: 15px;
+    width: 300px;
 }
     
 .containerCategories h5{
     color: #A69CAC;
     font-family: Cascadia Code;
-    font-size: 20px;
+    font-size: 25px;
+    text-align: center;
+
 }
 
 .containerCategories ul li{
@@ -14,5 +17,17 @@
     font-size: 15px;
     padding-top: 10px;
     text-decoration-line: none;
+    padding: 10px;
 
+}
+
+
+.containerCategories ul li:hover{
+    transition-duration: 500ms;
+    color: #fff;
+    font-family: Cascadia Code;
+    font-size: 15px;
+    padding-top: 10px;
+    text-decoration-line: none;
+    cursor: pointer;
 }

@@ -10,12 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "alertifyjs": "^1.13.1",
     "firebase": "^10.12.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-toastify": "^10.0.5",
-    "sweetalert2": "^11.6.13"
+    "react-toastify": "^10.0.5"
   },
   "devDependencies": {
     "@types/react": "^18.2.64",
